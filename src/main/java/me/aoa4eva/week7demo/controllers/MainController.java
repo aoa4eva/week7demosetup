@@ -184,6 +184,7 @@ public class MainController {
     @GetMapping("/addskilltojob")
     public  @ResponseBody  String addSkillToJob()
     {
+        //Find an existing job, and add a skill to it
         Jobs job = jobRepository.findOne(new Long(1));
         job.addSkill(skillRepository.findOne(new Long(1)));
         jobRepository.save(job);
@@ -198,6 +199,7 @@ public class MainController {
         s.setSkill("Type 50 WPM");
         s.setDescription("Type at least 50 WPM");
 
+        //Find person to add skill to, and save the person
         Person p = personRepository.findOne(new Long(1));
         p.addSkills(s);
         personRepository.save(p);
@@ -209,7 +211,7 @@ public class MainController {
     @GetMapping("/findjobswithmyskills")
     public @ResponseBody String findJobsWithSkills()
     {
-        //Select the person for whom you want to find a skill list
+        //Select the person for whom you want to find a skill list. This can also be applied to people whose skills match jobs
         Person p = personRepository.findOne(new Long(1));
 
         System.out.println("The list of jobs matching your skills");
@@ -217,6 +219,7 @@ public class MainController {
         {
             System.out.println(jobitem.getTitle());
         }
+
         return "Check your console";
     }
 }
