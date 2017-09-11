@@ -5,5 +5,5 @@ import me.aoa4eva.week7demo.models.Skills;
 import org.springframework.data.repository.CrudRepository;
 
 public interface JobRepository extends CrudRepository<Jobs,Long> {
-    Iterable <Jobs>findAllBySkillsIn(Iterable <Skills> skillList);
+    Iterable <Jobs>findAllByJobSkillsIn(Iterable <Skills> skillList);
 }

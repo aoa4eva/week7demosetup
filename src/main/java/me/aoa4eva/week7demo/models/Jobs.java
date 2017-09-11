@@ -1,5 +1,7 @@
 package me.aoa4eva.week7demo.models;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,7 +12,10 @@ public class Jobs {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotEmpty
     private String title;
+
+    private String description;
 
     //This will make job_id the second column in the join table, and thus the 'secondary' part of the many to many relationship
     //mappedBy is used primarily for searching - the CrudRepository knows to look for the appropriate relationship
@@ -43,6 +48,7 @@ public class Jobs {
         this.title = title;
     }
 
+
     public Set<Person> getPeople() {
         return people;
     }
@@ -56,6 +62,23 @@ public class Jobs {
 
         this.people.add(p);
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<Skills> getJobSkills() {
+        return jobSkills;
+    }
+
+    public void setJobSkills(Set<Skills> jobSkills) {
+        this.jobSkills = jobSkills;
+    }
+
     public void addSkill(Skills s){
         this.jobSkills.add(s);
     }

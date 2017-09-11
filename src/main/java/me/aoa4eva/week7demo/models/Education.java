@@ -1,7 +1,6 @@
 package me.aoa4eva.week7demo.models;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Education {
@@ -10,6 +9,10 @@ public class Education {
     private long id;
 
     private String institution;
+
+    private int completionYear;
+
+    private String major;
 
     public long getId() {
         return id;
@@ -27,4 +30,19 @@ public class Education {
         this.institution = institution;
     }
 
+    public int getCompletionYear() {
+        return completionYear;
+    }
+
+    public void setCompletionYear(int completionYear) {
+        this.completionYear = completionYear;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
 }

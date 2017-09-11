@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title th:text="${Title}">Page title</title>
+</head>
+<body>
+    <form th:action="@{/}" th:object="${newjob}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+
+        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span><br />
+        <input type="text" placeholder="Value Here" th:field="*{title}">
+
+        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />
+        <input type="text" placeholder="Value Here" th:field="*{description}">
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+</html>

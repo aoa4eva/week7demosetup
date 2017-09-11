@@ -20,6 +20,8 @@ public class Skills {
 
     private String description;
 
+    private int rating;
+
     public long getId() {
         return id;
     }
@@ -58,5 +60,17 @@ public class Skills {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

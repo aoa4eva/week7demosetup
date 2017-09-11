@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title th:inline="text">Job Detail Page [[${thejob.title}]]</title>
+    <h3 th:text="${job.title}"></h3>
+    <h6>Job Title</h6>
+    <h6 th:text="${job.title}"></h6>
+    <h6 th:text="${job.description}"></h6>
+    <a th:inline="text" th:href="@{/job/update/{id}(id=${job.id})}" >Add a skill</a>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

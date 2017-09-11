@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title th:text="${Title}">Page title</title>
+</head>
+<body>
+    <form th:action="@{/addskilltodb}" th:object="${newSkill}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+
+        <span th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}"></span><br />
+        <input type="text" placeholder="Enter skill" th:field="*{skill}">
+
+        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />
+        <input type="text" placeholder="Value Here" th:field="*{description}">
+
+        <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span><br />
+        <input type="number" placeholder="Value Here" th:field="*{rating}">
+
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+</html>

@@ -8,6 +8,7 @@ import java.util.Set;
 
 public interface PersonRepository extends CrudRepository<Person,Long> {
 
+    Person findByUsername(String username);
     Iterable<Person> findAllByRoleListContains(UserRole r);
     Iterable <Person> findAllByRoleListIn(Set <UserRole> roleList);
 }

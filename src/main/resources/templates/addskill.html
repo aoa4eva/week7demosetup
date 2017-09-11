@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title th:text="${Title}">Page title</title>
+</head>
+<body>
+    <form th:action="@{/addskill}" method="post">
+        <input type="hidden" th:value="${jobID}">
+        <select th:name="skillchoice" th:each="skillItem:${skillList}">
+            <!--<th:block th:each="skillItem:${skillList}">-->
+            <option th:text="${skillItem.skill}" th:value="${skillItem.id}"></option>
+            <!--</th:block>-->
+        </select>
+
+        <th:block th:each="skillItem:${skillList}">
+            <div th:text="${skillItem.skill}"></div>
+            <div th:text="${skillItem.id}"></div>
+        </th:block>
+        <input type="submit" value="Submit">
+
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="eachJob:${skillList}">
+                <td th:text="${eachJob.skill}"></td>
+                <td th:text="${eachJob.description}"></td>
+                <td><a th:inline="text" th:href="@{/job/update/{id}(id=${eachJob.id})}">Show Details</a></td>
+                <td><a th:inline="text" th:href="@{/addskill/{id}(id=${eachJob.id})}">Add skills</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <!--<form th:action="@{/addskill}" th:object="${skill}" method="post">-->
+        <!--<input type="hidden" th:field="*{id}">-->
+
+
+        <!--<span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span><br />-->
+        <!--<input type="text" placeholder="Value Here" th:field="*{title}">-->
+
+        <!--<span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />-->
+        <!--<input type="text" placeholder="Value Here" th:field="*{description}">-->
+
+        <!--<input type="submit" value="Submit">-->
+
+    <!--</form>-->
+</body>
+</html>
