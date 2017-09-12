@@ -237,13 +237,19 @@ public class MainController {
     {
         Person person = personRepository.findByUsername(p.getName());
 
-        Iterable <Jobs> targets = jobRepository.findAllByJobSkillsIn(person.getMySkills());
+        System.out.println("Skills that "+person.getUsername()+"has: ");
+        for(Skills eachSkill:person.getMySkills())
+        {
+            System.out.println(eachSkill.getSkill());
+        }
+       /* Iterable <Jobs> targets = jobRepository.findAllByJobSkillsIn(person.getMySkills());
         for(Jobs eachJob: targets)
         {
             System.out.println(eachJob.getTitle());
         }
         model.addAttribute("personList", targets);
-        return "matchtojobs";
+        return "matchtojobs";*/
+       return "matchtojobs";
     }
 
 
