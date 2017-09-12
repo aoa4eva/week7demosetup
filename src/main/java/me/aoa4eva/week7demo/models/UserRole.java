@@ -11,6 +11,16 @@ public class UserRole {
 
     private String roleName;
 
+    public UserRole()
+    {
+
+    }
+
+    public UserRole(String permission)
+    {
+        setRoleName(permission);
+    }
+
     public long getId() {
         return id;
     }

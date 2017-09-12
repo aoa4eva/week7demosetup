@@ -30,6 +30,15 @@ public class Skills {
         this.id = id;
     }
 
+    public Skills()
+    {
+
+    }
+
+    public Skills(String theSkill)
+    {
+        this.skill=theSkill;
+    }
     public Set<Person> getPeopleSkills() {
         return peopleSkills;
     }

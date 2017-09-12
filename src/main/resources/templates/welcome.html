@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title th:text="">Welcome Page</title>
+</head>
+<body>
+
+        <div sec:authentication="isAuthenticated()"></div>
+
+        <div sec:authorize="hasAuthority('SEEKER')"> Job Seeker. <a th:href="@{/addpersonskill/{id}(id=${})">Add Skill </div>
+
+
+        <div sec:authentication="isAuthenticated()"></div>
+
+
+
+</body>
+</html>

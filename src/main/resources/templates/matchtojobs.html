@@ -33,6 +33,7 @@
                         </table>
                     </div>
 
+
                 </div>
 
                 <div sec:authorize="hasAuthority('RECRUITER')" class="row">
@@ -53,10 +54,6 @@
                             <tbody>
                             <tr th:each="eachJob:${jobList}">
                                 <td th:text="${eachJob.title}"></td>
-                                <td th:text="${eachJob.description}"></td>
-                                <td><a th:inline="text" th:href="@{/job/update/{id}(id=${eachJob.id})}">Show Details</a></td>
-                                <td><a th:inline="text" th:href="@{/addskill/{id}(id=${eachJob.id})}">Add skills</a></td>
-                                <td><a th:inline="text" th:href="@{/matchjobtopeople/{id}(id=${eachJob.id})}">Find matches</a></td>
                             </tr>
                             </tbody>
                         </table>

@@ -6,4 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface JobRepository extends CrudRepository<Jobs,Long> {
     Iterable <Jobs>findAllByJobSkillsIn(Iterable <Skills> skillList);
+    Iterable <Jobs>countDistinctByJobSkillsIn(Iterable <Skills> skillList);
 }

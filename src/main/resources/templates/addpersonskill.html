@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+<body>
+
+<form th:action="@{/addpersonskill}" method="post">
+    <input type="text" name="id" th:value="${id}">
+    <select name="skillchoice">
+        <th:block th:each="skillItem:${skillList}">
+            <option th:text="${skillItem.skill}" th:value="${skillItem.id}"></option>
+        </th:block>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

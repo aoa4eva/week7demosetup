@@ -29,12 +29,6 @@ public class TestController {
     @Autowired
     SkillRepository skillRepository;
 
-//    @RequestMapping("/")
-//    public @ResponseBody String showIndex()
-//    {
-//        return "This is the welcome page";
-//    }
-
     @GetMapping("/addstudent")
     public @ResponseBody String addPersonAndEducation()
     {
@@ -107,7 +101,7 @@ public class TestController {
         newRole.setRoleName("ROLE_ADMIN");
         p.addRole(newRole);
 
-        //Save the person and associate him/her with BOTH users
+        //Save the person and associate him/her with BOTH roles
         personRepository.save(p);
 
         return "Role successfully added";
