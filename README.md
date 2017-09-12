@@ -12,7 +12,7 @@
 2. Run the application (make sure you've chosen the correct SDK!) 
 3. You can create users (but not assign them roles yet)... you fix that in. For now, a user can only have ONE role. 
 4. Jim is a recruiter. Add jobs and assign skills to the jobs. 
-5. Bob is a seeker. Add skills to his profile and 
+5. Bob is a seeker. Add skills to his profile and see the jobs that match his skills. 
 
 
 ### Extend the project 
