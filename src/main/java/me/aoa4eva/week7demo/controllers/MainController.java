@@ -236,7 +236,8 @@ public class MainController {
     public String matchJob(Principal p, Model model)
     {
         Person person = personRepository.findByUsername(p.getName());
-        Iterable <Jobs> targets = jobRepository.findAllByJobSkillsIn(person.getMyskills());
+
+        Iterable <Jobs> targets = jobRepository.findAllByJobSkillsIn(person.getMySkills());
         for(Jobs eachJob: targets)
         {
             System.out.println(eachJob.getTitle());

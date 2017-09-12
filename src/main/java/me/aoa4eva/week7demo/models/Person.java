@@ -131,14 +131,6 @@ public class Person {
         this.jobs = jobs;
     }
 
-    public Set<Skills> getMyskills() {
-        return mySkills;
-    }
-
-    public void setMyskills(Set<Skills> myskills) {
-        this.mySkills = myskills;
-    }
-
     public void addEducation(Education e)
     {
         this.educationList.add(e);

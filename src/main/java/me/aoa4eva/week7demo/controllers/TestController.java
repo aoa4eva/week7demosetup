@@ -209,7 +209,7 @@ public class TestController {
         Person p = personRepository.findOne(new Long(1));
 
         System.out.println("The list of jobs matching your skills");
-        for(Jobs jobitem:jobRepository.findAllByJobSkillsIn(p.getMyskills()))
+        for(Jobs jobitem:jobRepository.findAllByJobSkillsIn(p.getMySkills()))
         {
             System.out.println(jobitem.getTitle());
         }
